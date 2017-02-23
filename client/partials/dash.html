@@ -1,0 +1,29 @@
+<div ng-controller="userController"> 
+<h1> Welcome to the Dash Page {{current_user.name}}</h1>
+</div>
+
+<div ng-controller="nerdController">
+    <a href="#/addPage"><h2>Add a Nerd</h2></a>
+
+    <h1> Active Nerds </h1>
+    <table > 
+        <tr> <th> Nerd Name</th > <th> Nerd Power</th> <th>Likes</like> <th> Add Like </like> <th> Status</th> </tr>
+        <tr ng-repeat="nerd in active| orderBy: '-likes'"> 
+            <th> {{nerd.name}}</th>
+            <th> {{nerd.power}}</th>
+            <th> {{nerd.likes}}</th>
+            <th> <button ng_click ="Like(nerd)" > Like</button> 
+            <th> <button ng_click ="changeStatus(nerd)" > ChangeStatus</button> </th>
+    
+        </tr>
+    </table>
+    <h1> Inactive Nerds </h1>
+    <table > 
+        <tr> <th> Nerd Name</th > <th> Nerd Power</th> <th> Status</th> </tr>
+        <tr ng-repeat="nerd in inactive"> 
+            <th> {{nerd.name}}</th>
+            <th> {{nerd.power}}</th>
+            <th> <button ng_click ="changeStatus(nerd)" > ChangeStatus</button> </th>
+        </tr>
+    </table>
+</div>
